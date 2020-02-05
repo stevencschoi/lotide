@@ -14,13 +14,17 @@ const eqArrays = function(array1, array2) {
 
 // return the indices in the string where the character is found
 const letterPositions = function(sentence) {
-  // convert to no spaces string
-  const noSpaces = sentence.split(' ').join('');
-  // console.log(noSpaces);
   const results = {};
   // for loop to identify letter in sentence and return index
-  return results;
+  for (let letter in sentence) {
+    if (sentence[letter]) {
+      results[sentence[letter]] = sentence.indexOf(sentence[letter]);
+    }
+  }
+  delete results[" "];
+  return results
 };
 
-console.log(letterPositions("hello world"));
+console.log(letterPositions("lighthouse in the house"));
+console.log(letterPositions("hello"));
 // console.log(assertArraysEqual(letterPositions("hello")),{ h:0,e:1,l:2,3,o:4 })
