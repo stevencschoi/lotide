@@ -2,6 +2,16 @@ const assertEqual = function(actual, expected) {
   actual === expected ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
 };
 
+const eqArrays = function(array1, array2) {
+  // verify each item at each index of array matches
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i]) {
+      return false;
+    } 
+  }
+  return true;
+};
+
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 
@@ -33,3 +43,10 @@ eqObjects(ab, abc); // => false
 
 console.log(assertEqual(eqObjects(ab, ba),true));
 console.log(assertEqual(eqObjects(ab,abc), false));
+
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+console.log((eqArrays(eqObjects(cd, dc)), true)); // => true
+
+const cd2 = { c: "1", d: ["2", 3, 4] };
+console.log((eqArrays(eqObjects(cd, cd2)),false)); // => false
