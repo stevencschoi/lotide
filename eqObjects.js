@@ -4,6 +4,10 @@ const assertEqual = function(actual, expected) {
 
 const eqArrays = function(array1, array2) {
   // verify each item at each index of array matches
+  if (array1.length !== array2.length) {
+    return false;
+  }
+  
   for (let i = 0; i < array1.length; i++) {
     if (array1[i] !== array2[i]) {
       return false;
@@ -26,8 +30,12 @@ const eqObjects = function(obj1, obj2) {
   } 
   // loop through obj1 keys and compare to obj2 keys
   for (const key of objKeys1) {
+    // if (obj1[key].isArray(obj1[key]))
+    if (Array.isArray(obj1[key])) {
+      return eqArrays(obj1[key], obj2[key]);
+    }
     // assuming obj1 and obj2 are the same, we can check if the values at the identical key (index) for obj1 and obj2 are the same
-    if (obj1[key] !== obj2[key]) {
+    else if (obj1[key] !== obj2[key]) {
       return false;
     }
   }
@@ -46,7 +54,7 @@ console.log(assertEqual(eqObjects(ab,abc), false));
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
-console.log((eqArrays(eqObjects(cd, dc)), true)); // => true
+console.log(assertEqual(eqObjects(cd, dc), true)); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
-console.log((eqArrays(eqObjects(cd, cd2)),false)); // => false
+console.log(assertEqual(eqObjects(cd, cd2),false)); // => false
