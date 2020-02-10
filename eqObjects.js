@@ -11,7 +11,7 @@ const eqArrays = function(array1, array2) {
   for (let i = 0; i < array1.length; i++) {
     if (array1[i] !== array2[i]) {
       return false;
-    } 
+    }
   }
   return true;
 };
@@ -23,19 +23,17 @@ const eqArrays = function(array1, array2) {
 // The value for each key in one object is the same as the value for that same key in the other object
 
 const eqObjects = function(obj1, obj2) {
-  objKeys1 = Object.keys(obj1);
-  objKeys2 = Object.keys(obj2);
+  const objKeys1 = Object.keys(obj1);
+  const objKeys2 = Object.keys(obj2);
   if (objKeys1.length !== objKeys2.length) {
     return false;
-  } 
+  }
   // loop through obj1 keys and compare to obj2 keys
   for (const key of objKeys1) {
-    // if (obj1[key].isArray(obj1[key]))
     if (Array.isArray(obj1[key])) {
       return eqArrays(obj1[key], obj2[key]);
-    }
+    } else if (obj1[key] !== obj2[key]) {
     // assuming obj1 and obj2 are the same, we can check if the values at the identical key (index) for obj1 and obj2 are the same
-    else if (obj1[key] !== obj2[key]) {
       return false;
     }
   }
