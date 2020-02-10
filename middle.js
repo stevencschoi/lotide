@@ -7,7 +7,7 @@ const eqArrays = function(array1, array2) {
   for (let i = 0; i < array1.length; i++) {
     if (array1[i] !== array2[i]) {
       return false;
-    } 
+    }
   }
   return true;
 };
@@ -31,4 +31,6 @@ const middle = function(arr) {
     midEls.push(arr[Math.floor(midIndex)], arr[Math.floor(midIndex + 1)]);
   }
   return midEls;
-}
+};
+
+assertArraysEqual(middle([5,6,7,8,9,10]),[7,8]);

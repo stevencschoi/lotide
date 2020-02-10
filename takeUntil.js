@@ -20,7 +20,7 @@ const eqArrays = function(array1, array2) {
 const takeUntil = function(array, callback) {
   let result = [];
   for (const index of array) {
-    console.log(callback(index));
+    // console.log(callback(index));
     if (!callback(index)) {
       result.push(index);
     } else {
