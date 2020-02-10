@@ -2,8 +2,9 @@ const assertEqual = function(actual, expected) {
   actual === expected ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
 };
 
-// loop through the object to find the value to evaluate
+// loop through the object to find the value to return
 const findKey = function(obj, fn) {
+  // Object.entries returns the key value pairs of an object
   for (let [key, value] of Object.entries(obj)) {
     if (fn(value)) {
       return key;
