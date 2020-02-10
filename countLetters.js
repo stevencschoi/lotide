@@ -1,6 +1,6 @@
 const assertEqual = function(actual, expected) {
   actual === expected ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-}
+};
 // take in string, return count of each letter
 // requires defining a key value pair
 const countLetters = function(string) {
