@@ -7,10 +7,10 @@ const eqArrays = function(array1, array2) {
   for (let i = 0; i < array1.length; i++) {
     if (array1[i] !== array2[i]) {
       return false;
-    } 
+    }
   }
   return true;
-}
+};
 
 // return the indices in the string where the character is found - indexOf?
 // return as an array - create empty array within for loop?
@@ -29,7 +29,7 @@ const letterPositions = function(sentence) {
     }
   }
   delete results[" "];
-  return results
+  return results;
 };
 
 // console.log(letterPositions("lighthouse in the house"));
