@@ -15,7 +15,6 @@ const firstNames = [
 
 describe("#countOnly", () => {
   it("should return 1 from an input of firstNames", () => {
-    
     assert.deepEqual(countOnly(firstNames, { "Jason": true }), { "Jason": 1 });
   });
 });
