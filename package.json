@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@stevencschoi/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "lotide adaptation of lodash functions",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/stevencschoi/lotide.git"
   },
-  "author": "",
+  "author": "Steven Choi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/stevencschoi/lotide/issues"
