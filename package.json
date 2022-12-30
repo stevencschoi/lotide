@@ -21,6 +21,6 @@
   "homepage": "https://github.com/stevencschoi/lotide#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.0.1"
+    "mocha": "^10.2.0"
   }
 }
